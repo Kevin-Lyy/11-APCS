@@ -1,4 +1,4 @@
-public abstract Class LibraryBook extends Book implements Comparable<LibraryBook>{
+public abstract class LibraryBook extends Book implements Comparable<LibraryBook>{
     private String callNumber;
 
     //constructor
@@ -28,17 +28,17 @@ public abstract Class LibraryBook extends Book implements Comparable<LibraryBook
     //abstract
     abstract void checkout(String patron, String due);
     abstract void returned();
-    abstract String circulationStatus(){
-	return circulationStatus;
-    }
+    abstract String circulationStatus();
+
 
     //compare
-    public string bookcompareTo(){
+    public String bookcompareTo(){
+	return "penis";
     }
 
     //string
     public String toStringlib(){
-	return super(toString)+ circulationstatus+ callNumber;
+	return title + author + ISBN + circulationStatus() + callNumber;
     }
 
 }
