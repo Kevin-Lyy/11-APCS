@@ -1,4 +1,4 @@
-Public class Book{
+public class Book{
     private String author;
     private String title;
     private String ISBN;
@@ -8,9 +8,9 @@ Public class Book{
 	
     }
     //actual constructor
-    public Book(String name,String booktitle,String isbn){
+    public Book(String name,String bookTitle,String isbn){
 	author = name;
-	title = booktitle;
+	title = bookTitle;
 	ISBN = isbn;
     }
 
