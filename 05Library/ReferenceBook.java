@@ -27,7 +27,21 @@ Public Class ReferenceBook extends LibraryBook{
 	return collection;
     }
 
-    //void
+    //non-returns
+    public void checkout(){
+	return "cannot check out reference book";
+    }
+    public void returned(){
+	return "reference book could not have been checked out--return impossible";
+    }
+    public String circulationStatus(){
+	return "non-circulating refernce book";
+    }
+
+    //string
+    public String toStringlib(){
+	return title + author + ISBN + circulationStatus() + callNumber+ collection;
+    }
     
 
 }
