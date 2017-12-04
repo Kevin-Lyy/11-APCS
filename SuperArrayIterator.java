@@ -1,4 +1,4 @@
-public class SuperArray
+public class SuperArrayIterator implements iterator<String>{
     private String[] data;
     private int size;
 
