@@ -19,13 +19,13 @@ public abstract class LibraryBook extends Book implements Comparable<LibraryBook
     }
 
     //abstract
-    abstract void checkout(String patron, String due);
-    abstract void returned();
-    abstract String circulationStatus();
+    public abstract void checkout(String patron, String due);
+    public abstract void returned();
+    public abstract String circulationStatus();
 
 
     //compare
-    public String compareTo(LibraryBook other){
+    public int compareTo(LibraryBook other){
 	return getCallNumber().compareTo(other.getCallNumber());
     }
 

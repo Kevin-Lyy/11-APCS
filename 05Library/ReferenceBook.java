@@ -11,12 +11,12 @@ public class ReferenceBook extends LibraryBook{
 	return collection;
     }
 
-    public String setCollection(String collection){
+    public void setCollection(String collection){
 	this.collection = collection;
     }
 
     //non-returns
-    public void checkout(){
+    public void checkout(String something, String somethingelse){
 	System.out.println("cannot check out reference book");
     }
     public void returned(){
