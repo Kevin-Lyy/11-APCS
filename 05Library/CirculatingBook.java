@@ -3,33 +3,26 @@ Public Class CirculatingBook extends LibraryBook{
     private String dueDate;
 
     //constructor
-    public CirculatingBook(String name, String bookTitle, String isbn, String callNumberc, String Currentholder, String duedate){
-	super(name, bookTitle, isbn, callNumberc);
+    public CirculatingBook(String author, String title, String ISBN, String callNumber){
+	super(author, title, ISBN, callNumber);
 	currentHolder = "null";
 	dueDate = "null";
     }
     
     //getters and setters
-    public String getAuthor(){
-	return author;
-    }
-
-    public String getTitle(){
-	return title;
-    }
-    
-    public String getISBN(){
-	return ISBN;
-    }
-
-    public String getcallNumber(){
-	return callNumber;
-    }
-    public String getCurrentholder(){
+    public String getCurrentHolder(){
 	return currentHolder;
     }
     public String getdueDate(){
 	return dueDate();
+    }
+
+    public void setCurrentHolder(String currentHolder){
+	this.currentHolder = currentHolder;
+    }
+
+    public void setDueDate(String dueDate){
+	this.dueDate = dueDate;
     }
 
     //void
@@ -48,11 +41,11 @@ Public Class CirculatingBook extends LibraryBook{
 	if(currentHolder == "null"){
 	    return "book availble on shelves";
 	}
-	return currentHolder + dueDate;
+	return getCurrentHolder()+ ", " + getDueDate();
     }
 
     public String toString(){
-	return title + author + ISBN + circulationStatus() + callNumber +currentHolder + dueDate;
+	return getTitle()+", "+getAuthor()+", "+getISBN()+", "+circulationStatus()+", "+getCallNumber();
     }
 
     
