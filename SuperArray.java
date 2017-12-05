@@ -169,7 +169,7 @@ public class SuperArray implements Iterable<String>{
 	}
 	return false;
     }
-
+    //fix  the function next or make it abstract 
     public Iterator<String> iterator(){
 	return new SuperArrayIterator(data, 0, size() -1);
     }
