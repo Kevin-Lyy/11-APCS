@@ -1,56 +1,72 @@
-public class SuperArrayIterator implements iterator<String>{
+import java.util.Iterator;
+
+public class SuperArrayIterator implements Iterable<String>{
     private String[] data;
     private int size;
 
-    //0
+    //constructor
+    public SuperArray(){
+	data = new String[10];
+	size = 0;
+    }
+    
     public SuperArray(int startingCapacity){
 	size = startingCapacity;
 	int data[] = new int[size];
     }
     
-    //1
+    //clear
     public void clear(){
-	data = new String[size];
 	size = 0;
+	data = new String[size];
     }
     
-    //2 
+    //size
     public int size(){
-	return size;
+	return size;	
+    }
+
+    //checkempty
+    public boolean isEmpty(){
+	return size == 0;
     }
     
-    //3
+    //add
     public boolean add(String element){
-	if (data[size] != null){
+	if (data.length == size()){
 	    resize();
-	    data[size] = element;
 	}
-	else {
-	    data[size] = element;
+	String newdata = new String[data.length];
+	for (int c = 0; c <=size(); c++){
+	    newdata[x] = data[x];
 	}
+
+	newdata[size()]=element;
+	data = newdata;
+	size++;
 	return true;
     }
 	
-    //4
+    //toString
     public String toString(){
 	String str = "";
 	for(int c = 0;c < size; c++){
-	    str += data[c] + ",";
+	    str += data[c] + ", "
 	}
-	return "["+ str.substring(0,str.length()-2) + "]";
+	return "["+ str.substring(0,str.length()-1) + "]";
     }
 
-    //5
+    //get
     public String get(int index){
 	if(index < 0 || index > size()){
-	    return "null";
+	    throw new IndexOutOfBoundsException();
 	}
 	else{
-	return data[index];
+	    return data[index];
 	}
     }
     
-    //6
+    //set
     public String set(int index,String element){
 	if(index < 0 || index > size()){
 	    throw new UnsupportedOperationException();
@@ -64,10 +80,9 @@ public class SuperArrayIterator implements iterator<String>{
 
 
     //phase 2 
-    //7
+    //resize
     private void resize(){
-	size = size * 2;
-	String[] newData = new String[size + 1];
+	String[] newData = new String[size() + 1];
 	for(int c = 0; c < size; c++){
 	    newData[c] = data[c];
 	}
@@ -76,7 +91,7 @@ public class SuperArrayIterator implements iterator<String>{
 
     
     //phase 3
-    //8
+    //contains
     public boolean contains(String element){
 	for (int c = 0; c < size; c++){
 	    if (data[c].equals(element)){
@@ -86,7 +101,7 @@ public class SuperArrayIterator implements iterator<String>{
 	return false;
     }
 
-    //9
+    //index of 
     public int indexOf(String element){
 	for (int c = 0; c < data.length; c++){
 	    if (data[c].equals(element)){
@@ -108,7 +123,7 @@ public class SuperArrayIterator implements iterator<String>{
     //10
     public void add(int index, String element){
 	if(index < 0 || index > size()){
-	    System.out.println("error");
+	    throw new IndexOutOfBoundsException();
 	}
 	String[] newData = new String[size + 1];
 	size++;
@@ -130,7 +145,7 @@ public class SuperArrayIterator implements iterator<String>{
     //11
     public String remove(int index){
 	if(index < 0 || index > size()){
-	    return "null";
+	    throw new IndexOutOfBoundsException();
 	}
 	String returns = data[index];
 	String[] newData = new String[size];
@@ -153,6 +168,10 @@ public class SuperArrayIterator implements iterator<String>{
 	    return true;
 	}
 	return false;
+    }
+
+    public Iterator<String> iterator(){
+	return new SuperArrayIterator(data, 0, size() -1);
     }
     
 }
