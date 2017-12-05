@@ -2,37 +2,25 @@ Public Class ReferenceBook extends LibraryBook{
     private String collection;
 
     //constructor
-    public ReferenceBook(String name, String bookTitle, String isbn,String callNumber, String collectionc){
-	super (name, bookTitle, isbn, callNumberc);
-	collection = collectionc;
+    public ReferenceBook(String author, String title, String ISBN,String callNumber, String collection){
+	super (author, title, ISBN, callNumber);
+	this.collection = collection;
     }
     //getters and setters
-    public String getAuthor(){
-	return author;
-    }
-
-    public String getTitle(){
-	return title;
-    }
-    
-    public String getISBN(){
-	return ISBN;
-    }
-
-    public String getcallNumber(){
-	return callNumber;
-    }
-
-    public String getcollection(){
+    public String getCollection(){
 	return collection;
+    }
+
+    public String setCollection(String collection){
+	this.collection = collection;
     }
 
     //non-returns
     public void checkout(){
-	return "cannot check out reference book";
+	System.out.println("cannot check out reference book");
     }
     public void returned(){
-	return "reference book could not have been checked out--return impossible";
+	System.out.println("reference book could not have been checked out--return impossible");
     }
     public String circulationStatus(){
 	return "non-circulating refernce book";
@@ -40,7 +28,7 @@ Public Class ReferenceBook extends LibraryBook{
 
     //string
     public String toStringlib(){
-	return title + author + ISBN + circulationStatus() + callNumber+ collection;
+	return getTitle()+", "+getAuthor()+", "getISBN()+", "+circulationStatus()+", "+getCallNumber()+", "+getCollection();
     }
     
 
