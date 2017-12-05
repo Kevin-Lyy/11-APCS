@@ -8,10 +8,10 @@ public class Book{
 	
     }
     //actual constructor
-    public Book(String name,String bookTitle,String isbn){
-	author = name;
-	title = bookTitle;
-	ISBN = isbn;
+    public Book(String author ,String title,String ISBN){
+	this.author = author;
+	this.title = title;
+	this.ISBN = ISBN;
     }
 
     //getters and setters
@@ -26,11 +26,23 @@ public class Book{
     public String getISBN(){
 	return ISBN;
     }
+
+    public void setAuthor(String author){
+	this.author = author;
+    }
+
+    public void setTitle(String title){
+	this.title = title;
+    }
+
+    public void setISBN(String ISBN){
+	this.ISBN = ISBN;
+    }
     
 
     //tostring
     public String toString(){
-	return title + author + ISBN;
+	return getTitle()+", " + getAuthor()+", "+ getISBN();
     }
     
 
