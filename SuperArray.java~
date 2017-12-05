@@ -36,9 +36,9 @@ public class SuperArray implements Iterable<String>{
 	if (data.length == size()){
 	    resize();
 	}
-	String[] newdata = new String[data.length];
+	String newdata = new String[data.length];
 	for (int c = 0; c <=size(); c++){
-	    newdata[c] = data[c];
+	    newdata[x] = data[x];
 	}
 
 	newdata[size()]=element;
