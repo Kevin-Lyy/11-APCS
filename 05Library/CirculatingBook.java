@@ -1,4 +1,4 @@
-Public Class CirculatingBook extends LibraryBook{
+public class CirculatingBook extends LibraryBook{
     private String currentHolder;
     private String dueDate;
 
@@ -13,8 +13,8 @@ Public Class CirculatingBook extends LibraryBook{
     public String getCurrentHolder(){
 	return currentHolder;
     }
-    public String getdueDate(){
-	return dueDate();
+    public String getDueDate(){
+	return dueDate;
     }
 
     public void setCurrentHolder(String currentHolder){

@@ -1,4 +1,4 @@
-Public Class ReferenceBook extends LibraryBook{
+public class ReferenceBook extends LibraryBook{
     private String collection;
 
     //constructor
@@ -28,7 +28,7 @@ Public Class ReferenceBook extends LibraryBook{
 
     //string
     public String toStringlib(){
-	return getTitle()+", "+getAuthor()+", "getISBN()+", "+circulationStatus()+", "+getCallNumber()+", "+getCollection();
+	return getTitle()+", "+getAuthor()+", "+getISBN()+", "+circulationStatus()+", "+getCallNumber()+", "+getCollection();
     }
     
 
