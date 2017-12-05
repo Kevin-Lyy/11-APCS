@@ -9,20 +9,13 @@ public abstract class LibraryBook extends Book implements Comparable<LibraryBook
 	    
 
     //getters and setters
-    public String getAuthor(){
-	return author;
-    }
 
-    public String getTitle(){
-	return title;
+    public String getCallNumber(){
+	return callNumber;
     }
     
-    public String getISBN(){
-	return ISBN;
-    }
-
-    public String getcallNumber(){
-	return callNumber;
+    public void setCallNumber(String callNumber){
+	this.callNumber = callNumber;
     }
 
     //abstract
@@ -32,13 +25,13 @@ public abstract class LibraryBook extends Book implements Comparable<LibraryBook
 
 
     //compare
-    public String bookcompareTo(){
-	return "penis";
+    public String bookcompareTo(LibraryBook other){
+	return getCallNumber().compareTo(other.getCallNumber());
     }
 
     //string
     public String toStringlib(){
-	return title + author + ISBN + circulationStatus() + callNumber;
+	return getTitle()+", "+getAuthor()", "+getISBN()+", "+circulationStatus()+", "getCallNumber();
     }
 
 }
