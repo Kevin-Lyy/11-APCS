@@ -1,10 +1,10 @@
 public class barcode implements Comparable<barcode>{
     String _zip;
     String barcode;
-    String[] ziptoBar;
+    String[] zipToBar;
 
     //constructor 
-    public Barcode(String zip){
+    public barcode(String zip){
 	_zip = zip;
 
 	if (zip.length() != 5){
@@ -12,12 +12,12 @@ public class barcode implements Comparable<barcode>{
 	}
 	else{
 	    try{
-		for (int c = 0; c<zip.length();c++){
-		    Integer.parseInt(zip.subString(c,c+1));
+		for (int c = 0; c < zip.length();c++){
+		    Integer.parseInt(zip.substring(c,c+1));
 		}
 	    }
 	    catch(NumberFormatException e){
-		throw new IllegalArgumentEception();
+		throw new IllegalArgumentException();
 	    }
 	}
     }
@@ -28,7 +28,7 @@ public class barcode implements Comparable<barcode>{
     }
 
     //compares barcode
-    public int compareTo(Barcode other){
+    public int compareTo(barcode other){
 	return getZip().compareTo(other.getZip());
     }
 
@@ -40,12 +40,13 @@ public class barcode implements Comparable<barcode>{
 	else {
 	    try{
 		for (int c=0; c < zip.length(); c++){
-		    Interger.parseInt(zip.subString(c,c+1));
+		    Integer.parseInt(zip.substring(c,c+1));
 		}
 	    }
-	}
+	
 	catch(NumberFormatException e){
 	    throw new IllegalArgumentException();
+	}
 	}
 
 	String[] barcode = new String[10];
@@ -63,8 +64,8 @@ public class barcode implements Comparable<barcode>{
 	int sum = 0;
 	String code = "|";
 	for(int c = 0;c < zip.length();c++){
-	    code = code + barcode[Interger.parseInt(zip.subString(x,x+1))];
-	    sum = sum + Interger.parseInt(zip.subString(x,x+1));
+	    code = code + barcode[Integer.parseInt(zip.substring(c,c+1))];
+	    sum = sum + Integer.parseInt(zip.substring(c,c+1));
 	}
 
 	code = code + barcode[sum % 10] + "|";
@@ -73,7 +74,7 @@ public class barcode implements Comparable<barcode>{
 
     //converts the barcode to zip
     public static String toZip(String code){
-	String zip "";
+	String zip = "";
 	int checksum = 0;
 	String[] barcode = new String[10];
 	barcode[0] = "||:::";
@@ -87,20 +88,20 @@ public class barcode implements Comparable<barcode>{
 	barcode[8] = "|::|:";
 	barcode[9] = "|:|::";
 
-	if(code.length() != 32 ||!code.subString(0,1).equals("|") || !code.subString(code.length()-1,code.length()).equals("|")){
-	    throw new IllegalArgumentExpression();
+	if(code.length() != 32 ||!code.substring(0,1).equals("|") || !code.substring(code.length()-1,code.length()).equals("|")){
+	    throw new IllegalArgumentException();
 	}
 	else {
 	    for(int c = 0; c < code.length(); c++){
-		if(!code.subString(c,c+1).equals("|"))||(!code.subString(c,c+1).equals(":")){
-			throw new IllegalArgumentExcpetion();
+		if (!code.substring(c,c+1).equals("|") && !code.substring(c,c+1).equals(":")){
+			throw new IllegalArgumentException();
 		    }
 	    }
 	    int x = 1;
 	    int y = 0;
 
 	    while (x< code.length() - 5 && y < 10){
-		if (code.subString(x, x+5).equals(barcode[y])){
+		if (code.substring(x, x+5).equals(barcode[y])){
 		    zip += y;
 		    checksum += y;
 		    x += 5;
@@ -112,29 +113,47 @@ public class barcode implements Comparable<barcode>{
 	    }
 
 	    if (zip.length() > 0){
-		checksum = (checksum - Interger.parseInt(zip.subString(zip.length()-1,zip.length()))) % 10;
+		checksum = (checksum - Integer.parseInt(zip.substring(zip.length()-1,zip.length()))) % 10;
 	    }
-	    if (!code.subString(26,31).equals(barcode[checksum])){
+	    if (!code.substring(26,31).equals(barcode[checksum])){
 		    throw new IllegalArgumentException();
 	    }
 
 	}
-	return zip.subString(0,5);
+	return zip.substring(0,5);
     }
 
     public String getCode(){
 
 	zipToCode();
 	int checksum = 0;
-
+	for (int c = 0; c < _zip.length(); c++){
+	    barcode += zipToBar[Integer.parseInt(_zip.substring(c,c+1))];
+	    checksum += Integer.parseInt(_zip.substring(c,c+1));
+	}
+	barcode += zipToBar[checksum % 10]+"|";
+	return barcode;
     }
 
     public String getZip(){
 	return _zip;
     }
-    
-	
-		
-			
+    public boolean equals(barcode other){
+	return getZip().compareTo(other.getZip()) == 0;
+    }
+
+    private void zipToCode(){
+	zipToBar = new String[10];
+ 	zipToBar[0] = "||:::";
+	zipToBar[1] = ":::||";
+	zipToBar[2] = "::|:|";
+	zipToBar[3] = "::||:";
+	zipToBar[4] = ":|::|";
+	zipToBar[5] = ":|:|:";
+	zipToBar[6] = ":||::";
+	zipToBar[7] = "|:::|";
+	zipToBar[8] = "|::|:";
+	zipToBar[9] = "|:|::";
+    }		
 			
 }
