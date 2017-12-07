@@ -32,4 +32,16 @@ public class insertionSort{
 	}
     }
     */
+    /*
+    public static void insertionsort2(int[] data){
+	for (int i = 1; i < data.length; i++){
+	    int temp = data[i];
+	    int index = i;
+	    for(int j = i-1; j >=0 && data[j] >temp;j++){
+		data[j+1] = data[i];
+		j = index;
+	    }
+	}
+    }
+    */
 }
