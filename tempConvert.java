@@ -34,7 +34,13 @@ public class tempConvert extends JFrame{
 
     public void actionPerformed(ActionEvent e){
 	String s = e.getActionCommand;
-	
+	/*
+	  if(button for f  pressed && get inside textbox is a number)
+	  convert to f
+	  else (button for c && get inside textbox is a number
+	  convert to c
+	  return you done messed up
+	 */
     }
 
     public static void main(String[] args){
