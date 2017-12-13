@@ -1,10 +1,27 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class tempConvert{
-    
+public class tempConvert extends JFrame{
+    private Container pane;
+    private JButton c;
+    private JButton f;
+    private JTextField t;
 
     public tempConvert(){
+	this.setTitle("Temperature converter");
+	this.setSize(600,400);
+	this.setLocation(100,100);
+	this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+	pane = this.getContentPane();
+	pane.setLayout(new FlowLayout());
+
+	c = new JButton("convert to celsius");
+	f = new JButton("convert to fahrenheit");
+	t = new JTextField(12);
+	pane.add(t);
+	pane.add(c);
+	pane.add(f);
     }
 
     public static double CtoF(double t){
@@ -15,7 +32,13 @@ public class tempConvert{
 	return (t - 32) * 5/9;
     }
 
+    public void actionPerformed(ActionEvent e){
+	String s = e.getActionCommand;
+	
+    }
+
     public static void main(String[] args){
-	System.out.println(FtoC(32));
+	tempConvert g = new tempConvert();
+	g.setVisible(true);
     }
 }
