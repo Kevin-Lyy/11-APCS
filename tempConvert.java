@@ -1,11 +1,24 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
-public class tempConvert extends JFrame{
+
+public class tempConvert extends JFrame implements ActionListener{
     private Container pane;
-    private JButton c;
-    private JButton f;
+    private JButton c,f;
     private JTextField t;
+   
+    public void actionPerformed(ActionEvent e){
+	String s = e.getActionCommand();
+	System.out.println(s);
+	
+	if(c.isSelected()){
+	    t.setText(String.valueOf(FtoC(Double.parseDouble(t.getText()))));
+	}
+	else if(f.isSelected()){
+	    t.setText(String.valueOf(CtoF(Double.parseDouble(t.getText()))));
+	}
+    }
 
     public tempConvert(){
 	this.setTitle("Temperature converter");
@@ -18,7 +31,12 @@ public class tempConvert extends JFrame{
 
 	c = new JButton("convert to celsius");
 	f = new JButton("convert to fahrenheit");
-	t = new JTextField(12);
+	t = new JTextField(10);
+
+	c.addActionListener(this);
+	f.addActionListener(this);
+	t.addActionListener(this);
+	
 	pane.add(t);
 	pane.add(c);
 	pane.add(f);
@@ -32,16 +50,7 @@ public class tempConvert extends JFrame{
 	return (t - 32) * 5/9;
     }
 
-    public void actionPerformed(ActionEvent e){
-	String s = e.getActionCommand;
-	/*
-	  if(button for f  pressed && get inside textbox is a number)
-	  convert to f
-	  else (button for c && get inside textbox is a number
-	  convert to c
-	  return you done messed up
-	 */
-    }
+
 
     public static void main(String[] args){
 	tempConvert g = new tempConvert();
