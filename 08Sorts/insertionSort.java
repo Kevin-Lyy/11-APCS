@@ -9,6 +9,7 @@ public class insertionSort{
 	ary[a] = ary[b];
 	ary[b] = c;
     }
+    /*
 
     public static void insertionSort(int[] data){
 	for (int c = 0; c < data.length - 1; c++){
@@ -21,17 +22,16 @@ public class insertionSort{
 	    }
 	}
     }
-    /*
+    */
     public static void insertionsort(int[] data){
-	for (int i = 1; i < ary.length; i++){
+	for (int i = 1; i < data.length; i++){
 	    int j = i;
-	    while(j > 0 && ary[j] < ary[j-1]){
-		swap(ary, j,j-1);
+	    while(j > 0 && data[j] < data[j-1]){
+		swap(data, j,j-1);
 		j--;
 	    }
 	}
     }
-    */
     /*
     public static void insertionsort2(int[] data){
 	for (int i = 1; i < data.length; i++){
