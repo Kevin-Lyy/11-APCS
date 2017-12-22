@@ -2,13 +2,13 @@ import java.util.Arrays;
 public class Benchmark{
     public static void sort(int[]ary,int method){
 	if(method == 0){
-	    Sorts.bubbleSort(ary);
+	    Sort.bubbleSort(ary);
 	}
 	if(method == 1){
-	    Sorts.selectionSort(ary);
+	    Sort.selectionSort(ary);
 	}
 	if(method == 2){
-	    Sorts.insertionSort(ary);
+	    Sort.insertionsort(ary);
 	}
 	if(method == 3){
 	    Arrays.sort(ary);

@@ -12,15 +12,14 @@ public class bubbleSort{
     }
 
     public static void bubbleSort(int[] data){
-	for (intc = 0; c < data.length; c++){
-	    int next = data[c];
-	    int index = c;
-	    for (int i = c; i <data.length; i++){
-		if (data[i] < next){
-		    swap(data,index,i);
+	for (int c = 0; c < data.length - 1; c++){
+	    for (int i = 0; i < data.length-1-i; i++){
+		if (data[i+1] < data[i]){
+		    int temp = data[i+1];
+		    data[i+1] = data[i];
+		    data[i] = temp;
 		}
 	    }
 	}
     }
-
 }
