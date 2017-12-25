@@ -31,11 +31,10 @@ public class Sort{
 			}
 		    }
 		}
-	}
+	}	
     }
 	    
 
-    
     public static void insertionsort(int[] data){
 	for (int i = 1; i < data.length; i++){
 	    int j = i;
@@ -45,6 +44,7 @@ public class Sort{
 	    }
 	}
     }
+    
     public static void selectionSort(int[] data){
 	if (!isSorted(data)){
 	    for (int c = 0; c < data.length-1 ; c++){
