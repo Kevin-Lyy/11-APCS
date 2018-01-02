@@ -1,6 +1,6 @@
-import java.util.Iterator;
+import java.util.*;
 
-public class SuperArray implements Iterable<String>{
+public class SuperArray{
     private String[] data;
     private int size;
 
@@ -12,7 +12,7 @@ public class SuperArray implements Iterable<String>{
     
     public SuperArray(int startingCapacity){
 	size = startingCapacity;
-	int data[] = new int[size];
+	data = new String[size];
     }
     
     //clear
@@ -163,15 +163,24 @@ public class SuperArray implements Iterable<String>{
     
     //12
     public boolean remove(String element){
-	int c = indexOf(element);
-	if (remove(c) != "null"){
-	    return true;
+	int index = 0;
+	String[] newData = new String[size];
+	for(int c = size();c > 0; c--){
+	    if (data[c].equals(element)){
+		index = c;
+	    }
+	    else return false;
 	}
-	return false;
-    }
-    //fix  the function next or make it abstract 
-    public Iterator<String> iterator(){
-	return new SuperArrayIterator(data, 0, size() -1);
+	for (int i = 0; i < size();i++){
+	    if (i < index){
+		newData[i] = data[i];
+	    }
+	    else if (i > index){
+		newData[i] = data[i+1];
+	    }
+	}
+	data = newData;
+	return true;
     }
     
 }
