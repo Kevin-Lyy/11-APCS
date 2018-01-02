@@ -17,7 +17,7 @@ public class tempConvert extends JFrame implements ActionListener{
 	    }
 	    catch(NumberFormatException ex)
 		{
-		    t.setText("you done messed up");
+		    t.setText("error ");
 		}
 	    t.setText(String.valueOf(FtoC(Double.parseDouble(t.getText()))));
 	}
