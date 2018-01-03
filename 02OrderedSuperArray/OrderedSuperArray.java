@@ -52,11 +52,11 @@ public class OrderedSuperArray extends SuperArray{
     }
 
     public int indexOfBinary(String element){
-	return 1;
+	
     }
 
     public int lastIndexOfBinary(String element){
-	return 1;
+	
     }
 
 

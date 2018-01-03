@@ -13,8 +13,6 @@ public class WordSearch{
     private ArrayList<String>wordsAdded;
     
 
-    //private add all words (loop random parameter)
-
 
     //constructor 
     public WordSearch(int rows,int cols,String fileName){
