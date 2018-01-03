@@ -1,14 +1,18 @@
-public class ReversedCharSequence implements CharSequence{
+public class ReversedCharSequence{
     
     private String data;
 
-    public static void (String[]args){
+    public static void main(String[]args){
 	String s = "asdfg";
 	ReversedCharSequence word = new ReversedCharSequence(s);
 
     }
     
     public ReversedCharSequence(String test){
+	data = "";
+	for (int c = data.length() -1;c >= 0; c--){
+	    data += test.substring(c,c+1);
+	}
     }
     
     public String toString(){
@@ -20,10 +24,10 @@ public class ReversedCharSequence implements CharSequence{
     }
     
     public char charAt(int index){
-	return data.charAt[index];
+	return data.charAt(index);
     }
 
     public CharSequence subSequence(int start, int end){
-	return data.subString(start,end);
+	return data.substring(start,end);
     }
 }
