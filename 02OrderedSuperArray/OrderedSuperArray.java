@@ -52,10 +52,56 @@ public class OrderedSuperArray extends SuperArray{
     }
 
     public int indexOfBinary(String element){
+	int start = 0;
+	int end = size();
+	while (start < end){
+	    if(get((start+end)/2).compareTo(element) > 0){
+		end = (start + end) /2;
+	    }
+	    else if(get((start+end)/2).compareTo(element) > 0){
+		if(start ==0|| !(get((start + end)/2-1).equals(element))){
+		    return (start + end) /2;
+		}
+	    
+	    end = (start + end)/2;
+	    start = (start + end)/2 -1;
+	    }
+	    else {
+		start = (start+end)/2+1;
+	    }
+	}
+	if(get(start) != element){
+	    return -1;
+	}
+	return start;
 	
     }
 
     public int lastIndexOfBinary(String element){
+	int start = 0;
+	int end = size();
+	while (start < end){
+	    if(get((start+end)/2).compareTo(element) > 0){
+		end = (start + end) /2;
+	    }
+	    else if(get((start+end)/2).compareTo(element) > 0){
+		if(start == size)_ -1|| !(get((start + end)/2+1).equals(element))){
+		    return (start + end) /2;
+		}
+	    
+	    end = (start + end)/2;
+	    start = (start + end)/2 -1;
+	    }
+	    else {
+		start = (start+end)/2+1;
+	    }
+	}
+	if(get(start) != element){
+	    return -1;
+	}
+	return start;
+	
+    }
 	
     }
 

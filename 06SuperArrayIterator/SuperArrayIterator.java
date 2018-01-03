@@ -28,5 +28,4 @@ public class SuperArrayIterator implements Iterator<String>{
 	}
 	return data[current -1];
     }
-
 }
