@@ -66,6 +66,7 @@ public class OrderedSuperArray extends SuperArray{
 	    end = (start + end)/2;
 	    start = (start + end)/2 -1;
 	    }
+	    
 	    else {
 		start = (start+end)/2+1;
 	    }
@@ -85,27 +86,21 @@ public class OrderedSuperArray extends SuperArray{
 		end = (start + end) /2;
 	    }
 	    else if(get((start+end)/2).compareTo(element) > 0){
-		if(start == size)_ -1|| !(get((start + end)/2+1).equals(element))){
+		if(start == size) || !(get((start + end)/2+1).equals(element)) {
 		    return (start + end) /2;
 		}
-	    
+	    }
 	    end = (start + end)/2;
 	    start = (start + end)/2 -1;
-	    }
-	    else {
-		start = (start+end)/2+1;
-	    }
+	    /*
+	    else start = (start+end)/2+1;
+	    */
 	}
 	if(get(start) != element){
 	    return -1;
 	}
-	return start;
-	
+    return start;
     }
-	
-    }
-
-
 
 
 }
