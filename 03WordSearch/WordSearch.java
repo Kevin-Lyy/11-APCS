@@ -111,7 +111,7 @@ wq	    wordsToAdd.add(line);
     //addall
     private boolean addAllWords(){
 	for (int i = 0; i < wordsToAdd.size(); i++){
-	    for( int c =; c < 5000; c++){
+	    for( int c =0; c < 5000; c++){
 		addWord(radgen.nextInt(), radgen.nextInt(), wordsToAdd.get(i),radgen.nextInt(3)-1,radgen.nextInt(3)-1);
 	    }
 	}
