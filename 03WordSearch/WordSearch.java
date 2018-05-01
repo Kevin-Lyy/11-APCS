@@ -1,9 +1,9 @@
 //import files
-    import java.io.File;
-    import java.io.FileNotFoundException;
-    import java.util.Scanner;
-    import java.util.Random;
-    import java.util.ArrayList;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.Random;
+import java.util.ArrayList;
 
 
 public class WordSearch{
@@ -12,7 +12,6 @@ public class WordSearch{
     private ArrayList<String>wordsToAdd;
     private ArrayList<String>wordsAdded;
     
-
 
     //constructor 
     public WordSearch(int rows,int cols,String fileName){
