@@ -65,8 +65,6 @@ public class tempConvert extends JFrame implements ActionListener{
 	return (t - 32) * 5/9;
     }
 
-
-
     public static void main(String[] args){
 	tempConvert g = new tempConvert();
 	g.setVisible(true);

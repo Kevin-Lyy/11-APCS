@@ -9,40 +9,39 @@ public class Book{
     }
     //actual constructor
     public Book(String author ,String title,String ISBN){
-	this.author = author;
-	this.title = title;
-	this.ISBN = ISBN;
+    	this.author = author;
+    	this.title = title;
+    	this.ISBN = ISBN;
     }
 
     //getters and setters
     public String getAuthor(){
-	return author;
+    	return author;
     }
 
     public String getTitle(){
-	return title;
+    	return title;
     }
     
     public String getISBN(){
-	return ISBN;
+    	return ISBN;
     }
 
     public void setAuthor(String author){
-	this.author = author;
+    	this.author = author;
     }
 
     public void setTitle(String title){
-	this.title = title;
+    	this.title = title;
     }
 
     public void setISBN(String ISBN){
-	this.ISBN = ISBN;
+    	this.ISBN = ISBN;
     }
     
-
     //tostring
     public String toString(){
-	return getTitle()+", " + getAuthor()+", "+ getISBN();
+    	return getTitle()+", " + getAuthor()+", "+ getISBN();
     }
     
 

@@ -4,25 +4,25 @@ public class CirculatingBook extends LibraryBook{
 
     //constructor
     public CirculatingBook(String author, String title, String ISBN, String callNumber){
-	super(author, title, ISBN, callNumber);
-	currentHolder = "null";
-	dueDate = "null";
+    	super(author, title, ISBN, callNumber);
+    	currentHolder = null;
+    	dueDate = null;
     }
     
     //getters and setters
     public String getCurrentHolder(){
-	return currentHolder;
+    	return currentHolder;
     }
     public String getDueDate(){
-	return dueDate;
+    	return dueDate;
     }
 
     public void setCurrentHolder(String currentHolder){
-	this.currentHolder = currentHolder;
+    	this.currentHolder = currentHolder;
     }
 
     public void setDueDate(String dueDate){
-	this.dueDate = dueDate;
+    	this.dueDate = dueDate;
     }
 
     //void
@@ -33,12 +33,12 @@ public class CirculatingBook extends LibraryBook{
     }
 
     public void returned(){
-	currentHolder = "null";
-	dueDate = "null";
+	currentHolder = null;
+	dueDate = null;
     }
 
     public String circulationStatus(){
-	if(currentHolder == "null"){
+	if(currentHolder == null){
 	    return "book availble on shelves";
 	}
 	return getCurrentHolder()+ ", " + getDueDate();

@@ -6,26 +6,26 @@ public class SuperArrayIterator implements Iterator<String>{
     String[] data;
 
     public SuperArrayIterator(String[] superarray, int start, int stop){
-	data = superarray;
-	current = start;
-	end = stop;
+    	data = superarray;
+    	current = start;
+    	end = stop;
     }
 
     public void remove(){
-	throw new UnsupportedOperationException();
+    	throw new UnsupportedOperationException();
     }
 
     public boolean hasNext(){
-	return current <= end;
+    	return current <= end;
     }
 
     public String next(){
-	if (hasNext()){
-	    current++;
-	}
-	else{
-	    System.exit(0);
-	}
-	return data[current -1];
+    	if (hasNext()){
+    		current++;
+    	}
+    	else{
+    		System.exit(0);
+    	}
+    	return data[current -1];
     }
 }
