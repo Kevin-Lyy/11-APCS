@@ -7,7 +7,7 @@ public class tempConvert extends JFrame implements ActionListener{
     private Container pane;
     private JButton c,f;
     private JTextField t;
-   
+
     public void actionPerformed(ActionEvent e){
 	String s = e.getActionCommand();
 	System.out.println(s);
@@ -21,7 +21,7 @@ public class tempConvert extends JFrame implements ActionListener{
 		}
 	    t.setText(String.valueOf(FtoC(Double.parseDouble(t.getText()))));
 	}
-	
+
 	else if(s.equals("convert to fahrenheit")){
 	    try{
 		Double.parseDouble(t.getText());
@@ -33,7 +33,7 @@ public class tempConvert extends JFrame implements ActionListener{
 		t.setText(String.valueOf(CtoF(Double.parseDouble(t.getText()))));
 	}
     }
-		
+
 
     public tempConvert(){
 	this.setTitle("Temperature converter");
@@ -51,7 +51,7 @@ public class tempConvert extends JFrame implements ActionListener{
 	c.addActionListener(this);
 	f.addActionListener(this);
 	t.addActionListener(this);
-	
+
 	pane.add(t);
 	pane.add(c);
 	pane.add(f);
@@ -69,4 +69,6 @@ public class tempConvert extends JFrame implements ActionListener{
 	tempConvert g = new tempConvert();
 	g.setVisible(true);
     }
+    //test
+
 }
